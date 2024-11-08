@@ -6,7 +6,7 @@ const db = require("./config/mongoose-connection")
 const ownersRouter = require('./routes/ownersRouter')
 const productsRouter = require('./routes/productsRouter')
 const usersRouter = require('./routes/usersRouter')
-
+const indexRouter = require('./routes/index');
 
 
 app.use(express.json())
@@ -18,6 +18,7 @@ app.set("view engine", "ejs")
 app.use('/owners', ownersRouter) //use ownersRouter.js for /owner route
 app.use('/users', usersRouter)
 app.use('/products', productsRouter)
+app.use('/', indexRouter);
 
 
 app.listen(3000)
